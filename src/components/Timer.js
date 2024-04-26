@@ -1,58 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect,useMemo } from 'react'
 
 export default function Timer() {
 
-   const [count , setCount] = useState(0)
-
-
-   const [isRuning,setIsRunning] = useState(true)
-
-   const [intervalId,setIntervalId] = useState()
-
-   useEffect(()=>{
-    if(isRuning){
-        const intervel = setInterval(() => {
-            setCount(prev => prev+1)
-        }, 1000);
-    
-        setIntervalId(intervel)
-    }
-    
-   
-
-    return()=>{
-        clearInterval(intervalId)
-    }
-   },[])
+  
+  
 
    
 
+   const a = useEffect(()=>{
+   
+      return test(2)
+    })
 
+   const b = useMemo(()=> test(2),[])
 
-   const handleStartStop = () => {
-        if(isRuning){
-            clearInterval(intervalId)
-            setIsRunning(false)
-        }else{
-            
-            setIntervalId(  setInterval(() => {
-                setCount(prev => prev+1)
-            }, 1000))
-
-            setIsRunning(true)
-        }
+   function test(a){
+    return a*a
    }
+   
 
 
 
 
   return (
     <div style={{padding:"10px"}}>
-        <h1>Timer : {count} Seconds</h1> <br/>
-
-        <button onClick={handleStartStop} style={{fontSize:"1.2rem"}}> {isRuning ? <>Stop</> : <>Start</>}</button>
-    
-        <button onClick={()=>{setCount(0)}} style={{fontSize:"1.2rem",marginLeft:"15px"}}> Reset </button>
+       a --{a} <br/>
+       b -- {b}
     </div>
   )
 }

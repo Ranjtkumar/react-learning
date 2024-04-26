@@ -11,6 +11,7 @@ import Share from './Share';
 // import {store} from './store'
 import Example from './Example';
 import Timer from './components/Timer';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
      {/* <Example/> */}
 
 
-     <Timer/>
+     {/* <Timer/> */}
+     <Form/>
 
      
 
