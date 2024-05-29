@@ -24,4 +24,17 @@ code {
   margin-right: 10px;
 }
 
+.header-nav{
+  background-color: brown;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+
+  
+}
+
+.active{
+  background-color: blueviolet;
+}
+
 
